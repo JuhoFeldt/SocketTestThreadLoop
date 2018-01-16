@@ -61,8 +61,12 @@ namespace ServerTest
                 }
                 else
                 {
-                    
-                    Thread.Sleep(500);
+                    DateTime nyt2 = DateTime.Now;
+                    TimeSpan erotus = nyt2 - nyt;
+                    if (erotus.TotalSeconds > 60)
+                        jatka = false;
+                    else
+                        Thread.Sleep(500);
                 }
             }
             // suljetaan yhteydet
