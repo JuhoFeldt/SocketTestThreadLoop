@@ -33,12 +33,15 @@ namespace ServerTest
             bool jatka = true;
             while (jatka)
             {
+                DateTime nyt = DateTime.Now;
+
                 if (ns.DataAvailable)
                 {
                     // luetaan ja käsitellään komennot
 
                     string komento = sr.ReadLine();
                     string vastaus = "";
+                    DateTime nyt2 = DateTime.Now;
                     // päivitetään aika
                     switch (komento)
                     {
@@ -58,6 +61,7 @@ namespace ServerTest
                 }
                 else
                 {
+                    
                     Thread.Sleep(500);
                 }
             }
